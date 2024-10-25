@@ -132,7 +132,7 @@ Aber was ist nun ein Algorithmus? In dem folgenden Video wird zuerst erklärt,
 was ein Algorithmus ist. Danach werden die ersten grundlegenden Fachbegriffe des
 maschinellen Lernens eingeführt.
 
-**Mini-Übung**
+#### Mini-Übung 1
 
 Schauen Sie sich das folgende Video an und beantworten Sie die folgenden Fragen:
 
@@ -242,8 +242,8 @@ neue Daten hinzukommen, muss das Modell aktualisiert werden, um mit den sich
 ändernden Bedingungen zurechtzukommen.
 
 Die folgende Skizze zeigt den schematischen Ablauf eines typischen ML-Projektes.
-Dabei benutzen wir das sogenannte QUA<sup>3</sup>CK-Modell nach einem Vorschlag
-von {cite}`stock2020`. Das QUA<sup>3</sup>CK-Modell zeigt den typischen Ablauf
+Dabei benutzen wir das sogenannte QUA3CK-Modell nach einem Vorschlag
+von {cite}`stock2020`. Das QUA3CK-Modell zeigt den typischen Ablauf
 eines ML-Projektes von der wissenschaftlichen Fragestellung (Q -- Question) bis
 zu deren Beantwortung (K -- Knowledge Transfer). Dazu gehört das Sammeln und
 Erkunden der Daten (U -- Understanding the data), mit Hilfe derer die Frage
@@ -256,7 +256,7 @@ diese Schleife erstellt werden, werden letztendlich miteinander verglichen und
 bewertet (C -- Comparison and Conclusion), bevor sie produktiv eingesetzt
 werden.
 
-![Typischer Ablauf eines ML-Projektes als QUA<sup>3</sup>CK-Prozess dargestellt
+![Typischer Ablauf eines ML-Projektes als QUA3CK-Prozess dargestellt
 (Quelle: in Anlehnung an {cite}`stock2020`)](https://gramschs.github.io/book_ml4ing/_images/qua3ck_process.png)
 
 Das folgende Video erklärt den ML-Workflow etwas detaillierter, als wir es mit
