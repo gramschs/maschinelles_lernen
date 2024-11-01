@@ -1053,7 +1053,7 @@ aus und schreiben Sie Ihre Antwort hinter den Pfeil.
 
 ### Aufgabe 2.2
 
-Schreiben Sie ein Programm, dass die Zahlen von 5 bis 15 mit ihrem Quadrat
+Schreiben Sie ein Programm, das die Zahlen von 5 bis 15 mit ihrem Quadrat
 ausgibt, also "Das Quadrat von 5 ist 25." usw.
 
 ```{code-cell} ipython3
@@ -1071,7 +1071,7 @@ Fließkommazahl gerundet auf 2 Nachkommastellen ausgibt.
 
 ### Aufgabe 2.4
 
-Schreiben Sie ein Programm, dass eine Liste von Namen durchgeht und jede Person begrüßt. Wenn beispielsweise die Namen Alice, Bob und Charlie in der Liste stehen, lauten die Begrüßungen:
+Schreiben Sie ein Programm, das eine Liste von Namen durchgeht und jede Person begrüßt. Wenn beispielsweise die Namen Alice, Bob und Charlie in der Liste stehen, lauten die Begrüßungen:
 
 Hallo, Alice!
 
@@ -1085,7 +1085,7 @@ Hallo, Charlie!
 
 ### Aufgabe 2.5
 
-Schreiben Sie ein Programm, dass das kleine 1x1 in schöner Tabellenform ausgibt,
+Schreiben Sie ein Programm, das das kleine 1x1 in schöner Tabellenform ausgibt,
 also
 
 1 x 1 = 1
