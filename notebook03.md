@@ -5,9 +5,9 @@ jupytext:
     extension: .md
     format_name: myst
     format_version: 0.13
-    jupytext_version: 1.15.2
+    jupytext_version: 1.16.3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -63,7 +63,7 @@ Modul zur Verarbeitung und Analyse von Daten. Es ist üblich, das Modul `pandas`
 mit der Abkürzung `pd` zu importieren, damit wir nicht immer `pandas` schreiben
 müssen, wenn wir Code aus dem Pandas-Modul benutzen.
 
-```{code-cell}
+```{code-cell} ipython3
 import pandas as pd
 ```
 
@@ -72,7 +72,7 @@ installiert. Installieren Sie zunächst Pandas beispielsweise mit `!conda instal
 pandas` oder `!pip install pandas`. Mit der Funktion `dir()` werden alle
 Funktionalitäten des Moduls aufgelistet.
 
-```{code-cell}
+```{code-cell} ipython3
 dir(pd)
 ```
 
@@ -95,7 +95,7 @@ Internetplattform [Autoscout24](https://www.autoscout24.de). Die Preise kommen
 zunächst in eine Liste (erkennbar an den eckigen Klammern), aus der dann ein
 Series-Objekt erzeugt wird.
 
-```{code-cell}
+```{code-cell} ipython3
 preisliste = [1999, 35990, 17850, 46830, 27443, 14240, 19950, 15950, 21990, 50000]
 preise = pd.Series(preisliste)
 print(preise)
@@ -110,7 +110,7 @@ der Initialisierung einer Liste automatisch ein nummerierter Index 0, 1, 2, 3,
 werden soll, dann verwenden wir den Index 2 (zur Erinnerung: Python zählt ab 0)
 und schreiben
 
-```{code-cell}
+```{code-cell} ipython3
 preis_drittes_auto = preisliste[2]
 print(f'Preis des dritten Autos: {preis_drittes_auto} EUR')
 ```
@@ -122,7 +122,7 @@ Datensatz in den folgenden Kapiteln noch weiter vertiefen. An dieser Stelle
 halten wir fest, dass die ersten drei Autos von der Marke Audi sind, die
 nächsten sind BMWs und die letzten fünf sind von der Marke Citroen.
 
-```{code-cell}
+```{code-cell} ipython3
 autos = ['Audi Nr. 1', 'Audi Nr. 2', 'Audi Nr. 3', 'BMW Nr. 1', 'BMW Nr. 2', 'Citroen Nr. 1', 'Citroen Nr. 2', 'Citroen Nr. 3', 'Citroen Nr. 4', 'Citroen Nr. 5']
 preise = pd.Series(preisliste, index = autos)
 print(preise)
@@ -134,7 +134,7 @@ Series-Objekt noch einen impliziten Index wie eine Liste. Den expliziten Index
 nutzen wir jetzt, um auf den Verkaufspreis des dritten Autos zuzugreifen. Das
 dritte Auto ist `Audi Nr. 3`. Wie bei Listen verwenden wir eckige Klammern:
 
-```{code-cell}
+```{code-cell} ipython3
 preis_drittes_auto = preise['Audi Nr. 3']
 print(f'Preis des dritten Autos: {preis_drittes_auto} EUR')
 ```
@@ -145,7 +145,7 @@ der Datenstruktur ist noch eine Zusatzinformation gespeichert, die Eigenschaft
 Auf diese Eigenschaft kann auch direkt mit dem sogenannten Punktoperator
 zugegegriffen werden.
 
-```{code-cell}
+```{code-cell} ipython3
 datentyp_preise = preise.dtype
 print(f'Die einzelnen Elemente des Series-Objektes "preise" haben den Datentyp {datentyp_preise}, sind also Integer.')
 ```
@@ -156,7 +156,7 @@ Offensichtlich sind die gespeicherten Werte Integer.
 Erzeugen Sie ein Series-Objekt mit den Wochentagen als Index und der Anzahl der
 Vorlesungsstunden (SWS) an diesem Wochentag.
 
-```{code-cell}
+```{code-cell} ipython3
 # Hier Ihr Code:
 ```
 
@@ -167,7 +167,7 @@ Typ ist (Integer oder Float), können wir mit den Einträgen auch rechnen. So
 lassen sich beispielweise die Preise nicht in Euro, sondern als Preis pro
 Tausend Euro angeben, wenn wir alle Preise durch 1000 teilen.
 
-```{code-cell}
+```{code-cell} ipython3
 preise_pro_1000euro = preise / 1000
 print(preise_pro_1000euro)
 ```
@@ -176,7 +176,7 @@ Oder Sie könnten auf die Idee kommen, das billigste Auto auf den Preis 0 zu
 setzen und sich ausgeben lassen, um wie viel Euro die anderen Autos teuer sind.
 Oder anders ausgedrückt, wir subtrahieren von jedem Preis den Wert 1999 EUR:
 
-```{code-cell}
+```{code-cell} ipython3
 preise_differenz = preise - 1999
 print(preise_differenz)
 ```
@@ -187,7 +187,7 @@ Preise aufsteigend oder absteigend zu sortieren. Dazu nutzen wir die Methode
 `.sort_values()`. Der Name lässt vermuten, dass die Methode die Elemente nach
 ihrem Wert sortiert.
 
-```{code-cell}
+```{code-cell} ipython3
 preise_aufsteigend = preise.sort_values()
 print(preise_aufsteigend)
 ```
@@ -202,7 +202,7 @@ True` gewünscht wird, also dass `aufsteigend = wahr` sein soll. Wollen wir
 absteigend sortieren, müssen wir `aufsteigend = falsch` setzen, also `ascending
  = False`.
 
-```{code-cell}
+```{code-cell} ipython3
 preise_absteigend = preise.sort_values(ascending = False)
 print(preise_absteigend)
 ```
@@ -220,7 +220,7 @@ nachlesen können.
 Alice, Bob, Charlie und Dora sind 22, 20, 24 und 22 Jahre alt. Speichern Sie
 diese Informationen in einem Series-Objekt und sortieren Sie von alt nach jung.
 
-```{code-cell}
+```{code-cell} ipython3
 # Hier Ihr Code
 ```
 
@@ -256,7 +256,7 @@ Die Methode `.describe()` aus dem Pandas-Modul liefert eine schnelle Übersicht
 sollte diese Methode direkt am Anfang angewendet werden. Wir bleiben bei unserem
 Beispiel mit den zehn Autos und deren Verkaufspreisen.
 
-```{code-cell}
+```{code-cell} ipython3
 # Import des Pandas-Moduls 
 import pandas as pd
 
@@ -268,7 +268,7 @@ preise = pd.Series(preisliste, index = autos)
 
 Die Anwendung der `.describe()`-Methode liefert folgende Ausgabe:
 
-```{code-cell}
+```{code-cell} ipython3
 preise.describe()
 ```
 
@@ -280,14 +280,14 @@ erläutert wird. Wir gehen im Folgenden jede Kennzahl einzeln durch.
 Aber was machen wir, wenn wir die statistischen Kennzahlen erst später verwenden
 wollen, können wir sie zwischenspeichern? Probieren wir es aus.
 
-```{code-cell}
+```{code-cell} ipython3
 statistische_kennzahlen = preise.describe()
 ```
 
 Es kommt keine Fehlermeldung. Und was ist in der Variable
 `statistische_kennzahlen` nun genau gespeichert, welcher Datentyp?
 
-```{code-cell}
+```{code-cell} ipython3
 type(statistische_kennzahlen)
 ```
 
@@ -298,7 +298,7 @@ Kapitel schon gelernt haben, dass mit eckigen Klammern und dem Index auf einen
 einzelnen Wert zugegriffen werden kann, können wir uns so den minimalen
 Verkaufspreis ausgeben lassen:
 
-```{code-cell}
+```{code-cell} ipython3
 minimaler_preis = statistische_kennzahlen['min']
 print(f'Das billigste Auto wird für {minimaler_preis} EUR angeboten.')
 ```
@@ -310,7 +310,7 @@ wird es bei Autoscout24 angeboten? Lassen Sie dann das Maximum über die
 statistischen Kennzahlen, d.h. mit .describe() ermitteln. Vergleichen Sie beide
 Werte.
 
-```{code-cell}
+```{code-cell} ipython3
 # Hier Ihr Code
 ```
 
@@ -329,7 +329,7 @@ Einträge, wobei die fehlenden Einträge verschiedene Ursachen haben können:
   schwanger ist)
 * NA = no answer (eine Person hat bei dem Umfrage nichts angegeben)
 
-```{code-cell}
+```{code-cell} ipython3
 anzahl_gueltige_preise = preise.count()
 print(f'Im Series-Objekt sind {anzahl_gueltige_preise} nicht NA-Werte, also gültige Datensätze gespeichert.')
 ```
@@ -341,7 +341,7 @@ praktisch, dass wir mit .count() schon die Anzahl der gültigen Werte geliefert
 bekommen. Rechnen wir zuerst einmal "händisch" nach, was der durchschnittliche
 Verkaufspreis der 10 Autos ist.
 
-```{code-cell}
+```{code-cell} ipython3
 preisliste = [1999, 35990, 17850, 46830, 27443, 14240, 19950, 15950, 21990, 12450]
 summe = 1999 + 35990 + 17850 + 46830 + 27443 + 14240 + 19950 + 15950 + 21990 + 12450
 print(f'Die Summe ist {summe} EUR.')
@@ -352,7 +352,7 @@ print(f'Der durchschnittliche Verkaufspreis ist {mittelwert} EUR.')
 Mittelwert heißt auf Englisch mean. Daher ist es nicht verwunderlich, dass die
 Methode `.mean()` den Mittelwert der Einträge in jeder Spalte berechnet.
 
-```{code-cell}
+```{code-cell} ipython3
 mittelwert = preise.mean()
 print(f'Der mittlere Verkaufspreis beträgt {mittelwert} Euro.')
 ```
@@ -375,7 +375,7 @@ die Streuung von Daten um den Mittelwert angibt, ist die **Standardabweichung**.
 Zur Berechnung der Standardabweichung werden zuerst die Abweichungen jedes
 Datenpunktes zum Mittelwert berechnet.
 
-```{code-cell}
+```{code-cell} ipython3
 mittelwert = preise.mean()
 differenzen = preise - mittelwert
 print(differenzen)
@@ -384,7 +384,7 @@ print(differenzen)
 Die negativen Vorzeichen stören, wir wollen ja die Abweichung. Daher quadrieren
 wir die Differenzen.
 
-```{code-cell}
+```{code-cell} ipython3
 quadrate = differenzen * differenzen
 print(quadrate)
 ```
@@ -394,7 +394,7 @@ Verkaufspreise vom Mittelwert sind. Daher bilden wir nun von den Abweichungen
 wiederum den Mittelwert. Da Quadrate ein Series-Objekt ist, machen wir das
 diesmal nicht händisch, sondern nutzen die Methode `.mean()`.
 
-```{code-cell}
+```{code-cell} ipython3
 durchschnittliche_abweichungen = quadrate.mean()
 print(f'Die durchschnittliche Abweichung ist {durchschnittliche_abweichungen}.')
 ```
@@ -407,7 +407,7 @@ Abweichung ist also EUR². Das ist aber unpraktisch. Also ziehen wir wieder die
 Wurzel, damit wir ein Maß für die durchschnittliche Abweichung haben, das auch
 direkt Verkaufspreise widerspiegelt. Das nennen wir dann Standardabweichung.
 
-```{code-cell}
+```{code-cell} ipython3
 standardabweichung = quadrate.mean()**0.5
 print(f'Die Standardabweichung ist {standardabweichung:.2f} EUR.')
 ```
@@ -418,7 +418,7 @@ Benutzen wir Pandas, so liefert die Methode `.std()` die Standardabweichung. Das
 dem englischen Fachbegriff 'standard deviation' benannt. Probieren wir die
 Methode für die Autopreise aus.
 
-```{code-cell}
+```{code-cell} ipython3
 standardabweichung = preise.std()
 print(f'Die Standardabweichung bei den Verkaufspreisen beträgt {standardabweichung} Euro.')
 ```
@@ -445,7 +445,7 @@ dass das Minimum oder das Maximum mehrfach vorkommt.
 Schauen wir uns an, was der niedrigste Verkaufspreis ist. Und dann schauen wir
 nach, welches Auto am teuersten ist.
 
-```{code-cell}
+```{code-cell} ipython3
 preis_min = preise.min()
 print(f'Das billigste oder die billigsten Autos werden zum Preis von {preis_min} EUR angeboten.')
 
@@ -464,7 +464,7 @@ Angenommen, wir würden gerne das 0.5-Quantil (auch Median genannt) der Preise
 wissen. Mit der Methode `.quantile()` können wir diesen Wert leicht aus den
 Daten holen.
 
-```{code-cell}
+```{code-cell} ipython3
 quantil50 =preise.quantile(0.5)
 print(f'Der Median, d.h. das 50 % Quantil, liegt bei {quantil50} EUR.')
 ```
@@ -473,7 +473,7 @@ Das 50 % -Quantil liegt bei 18900 EUR. 50 % aller Autos werden zu einem Preis
 angeboten, der kleiner oder gleich 18900 EUR ist. Und 50 % aller Autos werden
 teuer angeboten. Wir schauen uns jetzt das 75 % Quantil an.
 
-```{code-cell}
+```{code-cell} ipython3
 quantil75 = preise.quantile(0.75)
 print(f'75 % aller Autos haben einen Preis kleiner gleich {quantil75} EUR.')
 ```
@@ -482,7 +482,7 @@ print(f'75 % aller Autos haben einen Preis kleiner gleich {quantil75} EUR.')
 natürlich für jede beliebigen Prozentsatz zwischen 0 % und 100 % das Quantil
 ansehen können, interessieren wir uns noch für das 25 % Quantil.
 
-```{code-cell}
+```{code-cell} ipython3
 quantil25 = preise.quantile(0.25)
 print(f'25 % aller Autos haben einen Preis kleiner gleich {quantil25} EUR.')
 ```
@@ -536,7 +536,7 @@ Erstellung von Diagrammen zur Verfügung stellt.
 und schauen uns mit der `dir()`-Funktion an, welche Funktionalitäten Plotly
 Express bietet.
 
-```{code-cell}
+```{code-cell} ipython3
 import plotly.express as px
 
 dir(px)
@@ -546,7 +546,7 @@ dir(px)
 
 Wir greifen erneut unser Autoscout24-Beispiel mit den 10 Autos auf.
 
-```{code-cell}
+```{code-cell} ipython3
 import pandas as pd
 
 preisliste = [1999, 35990, 17850, 46830, 27443, 14240, 19950, 15950, 21990, 12450]
@@ -562,7 +562,7 @@ der Variablen `diagramm`. Um es dann auch nach seiner Erzeugung tatsächlich
 anzeigen zu lassen, verwenden wir die Methode `.show()`. Zusammen sieht der
 Python-Code zur Erzeugung eines Boxplots folgendermaßen aus:
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise)
 diagramm.show()
 ```
@@ -591,7 +591,7 @@ Tabelle interpretiert wird und die erste Spalte den Index 0 hat. Wir können der
 Spalte aber auch einen eigenen Namen geben. Am einfachsten klappt das direkt bei
 der Erzeugung, indem der Parameter `name=` gesetzt wird.
 
-```{code-cell}
+```{code-cell} ipython3
 preisliste = [1999, 35990, 17850, 46830, 27443, 14240, 19950, 15950, 21990, 12450]
 preise_mit_name = pd.Series(preisliste, index = ['Audi Nr. 1', 'Audi Nr. 2', 'Audi Nr. 3', 'BMW Nr. 1', 'BMW Nr. 2', 
     'Citroen Nr. 1', 'Citroen Nr. 2', 'Citroen Nr. 3', 'Citroen Nr. 4', 'Citroen Nr. 5'],
@@ -603,7 +603,7 @@ print(preise_mit_name)
 Der neue Name 'XXS-Liste von Autoscout24' wird zusätzlich zur Information 'dtype' angezeigt.
 Damit sieht der Boxplot folgendermaßen aus:
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise_mit_name)
 diagramm.show()
 ```
@@ -614,7 +614,7 @@ Eingeleitet wird die Ersetzung durch das Schlüsselwort `labels=`. Danach steht
 in geschweiften Klammern `{` und `}` der alten Name, dann folgt ein Doppelpunkt
 und dann der neue Name.
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise_mit_name, labels={'variable': 'Name des Datensatzes'})
 diagramm.show()
 ```
@@ -622,7 +622,7 @@ diagramm.show()
 Sollen gleich mehrere Beschriftungen ersetzt werden, werden alle Paare mit einem
 Komma getrennt aufgelistet.
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise_mit_name, labels={'variable': 'Name des Datensatzes', 'value': 'Verkaufspreis [EUR]'})
 diagramm.show()
 ```
@@ -631,7 +631,7 @@ Fehlt noch eine Überschrift, ein Titel. Wie das englische Wort 'title' heißt
 auch das entsprechende Schlüsselwort zum Erzeugen eines Titels, nämlich
 `title=`.
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise_mit_name, 
               labels={'variable': 'Name des Datensatzes', 'value': 'Verkaufspreis [EUR]'},
               title='Statistische Kennzahlen als Boxplot')
@@ -647,7 +647,7 @@ Ausreißer (`'outliers'`).
 
 Lassen wir zuerst alle Punkte anzeigen und setzen also `points='all'`.
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise_mit_name, 
               labels={'variable': 'Name des Datensatzes', 'value': 'Verkaufspreis [EUR]'},
               points='all')
@@ -657,7 +657,7 @@ diagramm.show()
 Die Punkte werden links vom Boxplot platziert. Als nächstes lassen wir uns die
 Ausreißer anzeigen.
 
-```{code-cell}
+```{code-cell} ipython3
 diagramm = px.box(preise_mit_name, 
               labels={'variable': 'Name des Datensatzes', 'value': 'Verkaufspreis [EUR]'},
               points='outliers')
@@ -679,7 +679,7 @@ Autopreise kommen keine Ausreißer vor, weil Minimum und Maximum noch innerhalb
 dieses Bereichs liegen. Wir fügen daher noch ein neues, teureres Auto ein. Jetzt
 sehen wir einen Ausreißer.
 
-```{code-cell}
+```{code-cell} ipython3
 preise_mit_name['BMW Nr. 3'] = 62999
 diagramm = px.box(preise_mit_name, 
               labels={'variable': 'Name des Datensatzes', 'value': 'Verkaufspreis [EUR]'},
