@@ -775,3 +775,164 @@ In diesem Kapitel haben wir die polynomiale Regression mit Scikit-Learn
 kennengelernt. Auch bei der polynomialen Regression ist die Wahl des
 Hyperparameters Polynomgrad wichtig. Im nächsten Kapitel werden wir uns ansehen.
 wie Hyperparameter getunt werden können.
+
+## Übungen
+
+### Aufgabe 7.1 Bevölkerungszahlen in Deutschland
+
+In dieser Aufgabe betrachten wir den Datensatz `population_germany.csv`. Führen
+Sie zuerst eine explorative Datenanalyse durch. Geben Sie dann mit Hilfe eines
+Entscheidungsbaumes (Decision Tree) und eines linearen Regressionsmodells
+jeweils eine Prognose ab, wie viele Menschen in Deutschland im Jahr 2100 leben
+werden. Unterscheiden sich die beiden Prognosen?
+
+#### Überblick über die Daten
+
+Laden Sie die csv-Datei `population_germany.csv`. Welche Daten enthält die
+Datei? Wie viele Datenpunkte sind vorhanden? Wie viele und welche Merkmale gibt
+es? Sind die Daten vollständig? Welche Datentypen haben die Merkmale?
+
+```{code-cell}
+#
+```
+
+#### Statistik der numerischen Daten
+
+Erstellen Sie eine Übersicht der statistischen Kennzahlen für die numerischen
+Daten. Visualisieren Sie anschließend die statistischen Kennzahlen mit Boxplots.
+Interpretieren Sie die statistischen Kennzahlen. Gibt es Ausreißer? Sind die
+Werte plausibel?
+
+```{code-cell}
+#
+```
+
+#### Statistik der kategorialen Daten
+
+Erstellen Sie eine Übersicht der Häufigkeiten für die kategorialen Daten.
+Visualisieren Sie anschließend die Häufigkeiten mit Barplots. Interpretieren Sie
+die Häufigkeiten. Sind die Werte plausibel?
+
+```{code-cell}
+#
+```
+
+#### Ursache - Wirkung
+
+Erstellen Sie einen Scatterplot mit dem Jahr auf der x-Achse und der Population
+auf der y-Achse. Beschriften Sie den Scatterplot sinnvoll. Vermuten Sie einen
+Zusammenhang zwischen Jahr und Bevölkerung? Was fällt Ihnen generell auf? Können Sie die Besonderheiten mit Geschichtswissen erklären?
+
+```{code-cell}
+#
+```
+
+#### Lineares Regressionsmodell
+
+Adaptieren Sie die Daten. Wählen Sie als Input das Jahr und als Output die
+Population. Trainieren Sie ein lineares Regressionsmodell und lassen Sie den
+Score berechnen und ausgeben.
+
+```{code-cell}
+#
+```
+
+#### Entscheidungsbaum/Decision Tree
+
+Lassen Sie nun einen Entscheidungsbaum/Decision Tree trainieren und den Score
+ausgeben.
+
+Tipp: Das Scikit-Learn-Modell heißt DecisionTreeRegressor.
+
+```{code-cell}
+#
+```
+
+#### Bewertung und Prognose
+
+Für welches Modell würden Sie sich entscheiden? Begründen Sie Ihre Wahl.
+
+Lassen Sie dann sowohl das lineare Regressionsmodell als auch den
+Entscheidungsbaum die Populationen von 1800 bis 2100 prognostizieren. Verwenden
+Sie dazu den folgenden Datensatz:
+
+```python
+prognosedaten = pd.DataFrame({
+    'Jahr': range(1800, 2101)
+})
+```
+
+Visualisieren Sie die Prognosen zusammen mit den gemessenen Populationen in
+einem gemeinsamen Scatterplot.
+
+Tipp: Mit
+
+`fig.add_scatter(x = prognosedaten['Jahr'],y = prognose_linear, name='lineare Regression')``
+
+können Sie einen weiteren Scatterplot zu einem schon existierenden (hier in der Variable `fig` gespeichert) hinzufügen.
+
+Welches Modell würden Sie nach der Visualisierung bevorzugen?
+
+```{code-cell}
+#
+```
+
+## Aufgabe 7.2
+
+Eine Firma erhebt statistische Daten zu ihren Verkaufszahlen (angegeben in
+Tausend US-Dollar) abhängig von dem eingesetzten Marketing-Budget in den
+jeweiligen Sozialen Medien (Quelle siehe
+<https://www.kaggle.com/datasets/fayejavad/marketing-linear-multiple-regression>).
+
+Erstellen Sie eine explorative Datenanalyse (EDA). Trainieren Sie dann
+ML-Modelle und bewerten Sie, bei welchem sozialen Medium sich am ehesten lohnt zu investieren.
+
+### Überblick über die Daten Marketing
+
+Laden Sie die csv-Datei `marketing_data.csv`. Welche Daten enthält die
+Datei? Wie viele Datenpunkte sind vorhanden? Wie viele und welche Merkmale gibt
+es? Sind die Daten vollständig? Welche Datentypen haben die Merkmale?
+
+```{code-cell}
+#
+```
+
+#### Statistik der numerischen Daten Marketing
+
+Erstellen Sie eine Übersicht der statistischen Kennzahlen für die numerischen
+Daten. Visualisieren Sie anschließend die statistischen Kennzahlen mit Boxplots.
+Interpretieren Sie die statistischen Kennzahlen. Gibt es Ausreißer? Sind die
+Werte plausibel?
+
+```{code-cell}
+#
+```
+
+#### Ursache - Wirkung Marketing
+
+Erstellen Sie zuerst eine Scattermatrix, um Ursache und Wirkung zu analysieren.
+Lassen Sie dann die Korrelationsmatrix als Heatmap anzeigen und interpretieren
+Sie das Ergebnis.
+
+```{code-cell}
+#
+```
+
+#### Lineare Regressionsmodelle
+
+Trainieren Sie drei lineare Regressinsmodelle, jeweils mit einem anderen Merkmal
+als Input, d.h. mit jeweils `youtube`, `facebook`, `newspaper`. Adaptieren Sie
+dazu passend die Daten. Lassen Sie jeweils den Score berechnen und ausgeben.
+
+```{code-cell}
+#
+```
+
+#### Finales Modell
+
+Trainieren Sie nun als finales Modell ein multiples Regressionsmodell und
+stellen Sie mit den Koeffizienten (Gewichten) und dem Achsenabschnitt (Bias) die dazugehörige Modellfunktion auf.
+
+```{code-cell}
+#
+```
