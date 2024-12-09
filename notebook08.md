@@ -810,3 +810,52 @@ allem, wenn die Daten in sehr unterschiedlichen Zahlenbereichen liegen. Bei den
 bisher eingeführten ML-Modellen lineare Regression und Entscheidungsbäumen ist
 die Skalierung der numerischen Daten nicht notwendig. Erst die nachfolgenden
 ML-Modelle werden davon Gebrauch machen.
+
+## Übungen
+
+### Aufgabe 8.1
+
+Eine Abalone oder ein Seeohr ist eine Schnecke mit Schale, die einer Ohrmuschel
+ähnelt (siehe <https://de.wikipedia.org/wiki/Seeohren>). Laden Sie den Datensatz
+'abalone_DE.csv'. Ziel dieser Aufgabe ist ein Modell zu trainieren, das aus den
+Angaben zu Geschlecht, Größe und Gewicht die Anzahl der Ringe prognostiziert.
+Die Anzahl der Ringe +1.5 gibt das Alter der Abalone an.
+
+1. Führen Sie eine Datenexploration durch. Dazu gehören insbesondere
+   * Übersicht
+   * statistische Kennzahlen der Eigenschaften
+   * Visualisierungen der Eigenschaften
+   * Analyse bzgl. Ausreißer
+2. Bereinigen Sie den Datensatz. Dazu gehört insbesondere die Entfernung von
+   Ausreißern.  
+3. Wählen Sie ein Modell.
+4. Bereiten Sie die Daten für das Modell auf. Dazu gehört insbesondere auch der
+   Split in Trainings- und Testdaten.
+5. Validieren Sie das Modell. Erhöhen Sie die Modellkomplexität und beurteilen
+   Sie, ob Over- oder Underfitting vorliegt.
+
+```{code-cell}
+#
+```
+
+### Aufgabe 8.2
+
+Der Datensatz
+'statistic_id226994_annual-average-unemployment-figures-for-germany-2005-2022.csv'
+stammt von Statista. Die Daten beschreiben die Entwicklung der
+Arbeitslosenzahlen (in Mio.) seit 1991. Im Original-Excel sind einige
+Ungereimtheiten, die sich auch so im csv-File befinden.
+
+1. Korrigieren Sie den Datensatz zuerst mit einem Texteditor.
+2. Führen Sie dann eine explorative Datenanalyse durch (Übersicht, statistische
+   Kennzahlen, Boxplot und Visualisierung der Arbeitslosenzahlen abhängig vom
+   Jahr.)
+3. Wählen Sie mehrere ML-Modelle aus. Adaptieren Sie die Daten für das Training
+   und lassen Sie die gewählten ML-Modelle trainieren.
+4. Validieren Sie Ihr Modell: ist es geeignet? Bewerten Sie die Modelle bzgl.
+   Over- und Underfitting.
+5. Visualisieren Sie eine Prognose von 1990 bis 2030.
+
+```{code-cell}
+#
+```
