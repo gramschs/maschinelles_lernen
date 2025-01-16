@@ -503,3 +503,30 @@ zurück. Wenn wir als Transformationsfunktion die sogenannten Kernel-Funktionen
 verwenden, können wir auf die Transformation der Daten verzichten und die
 Transformation direkt in die SVM einbauen. Das wird Kernel-Trick genannt und
 sorgt für die Effizienz und damit Beliebtheit von SVMs.
+
+## Übung
+
+Auf der Internetseite
+<https://archive.ics.uci.edu/dataset/151/connectionist+bench+sonar+mines+vs+rocks>
+finden Sie einen Datensatz mit Sonarsignalen. Die Muster der Signals sind durch
+60 Zahlenwerte codiert (es handelt sich um die Energie zu bestimmten
+Frequenzen). Darüber hinaus wird angegeben, ob das Sonarsignal Gestein (= Stein)
+oder Metall detektiert hat.
+
+Laden Sie nun die Datei 'metall_oder_stein.csv'. Führen Sie eine explorative
+Datenanalyse durch. Lassen Sie dann alle Ihnen bekannten Klassifikations-Modelle
+trainieren und validieren, um die Materialeigenschaft Stein/Metall auf Basis der
+numerischen Werte zu prognostizieren.
+
+Nützliche Import-Befehle sind in der folgenden Code-Zelle gegeben. Entfernen Sie
+das Kommentarzeichen, falls Sie einen Import-Befehl nutzen möchten. Gerne können
+Sie eigene Module ergänzen.
+
+```{code-cell}
+#import pandas as pd
+#import plotly.express as px
+#from sklearn.model_selection import train_test_split
+#from sklearn.tree import DecisionTreeClassifier
+#from sklearn.ensemble import RandomForestClassifier
+#from sklearn.svm import SVC
+```
